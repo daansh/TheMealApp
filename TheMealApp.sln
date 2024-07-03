@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMealApp", "TheMealApp\TheMealApp.csproj", "{CC4D14F5-44F0-44DD-AE01-EE05C903D3DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealUnitTestApp", "MealUnitTestApp\MealUnitTestApp.csproj", "{11BB185B-DD22-44C9-A71D-70D80355499B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC4D14F5-44F0-44DD-AE01-EE05C903D3DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC4D14F5-44F0-44DD-AE01-EE05C903D3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC4D14F5-44F0-44DD-AE01-EE05C903D3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC4D14F5-44F0-44DD-AE01-EE05C903D3DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BB185B-DD22-44C9-A71D-70D80355499B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BB185B-DD22-44C9-A71D-70D80355499B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BB185B-DD22-44C9-A71D-70D80355499B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BB185B-DD22-44C9-A71D-70D80355499B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31F22D15-126B-406E-A020-A135579F2466}
+	EndGlobalSection
+EndGlobal

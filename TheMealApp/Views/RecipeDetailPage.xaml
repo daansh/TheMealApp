@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:TheMealApp.ViewModels"
+             x:Class="TheMealApp.Views.RecipeDetailPage"
+             Title="Recipe Detail"
+             x:DataType="viewmodel:RecipeDetailViewModel">
+    <Grid BindableLayout.ItemsSource="{Binding RecipeDetail}" Padding="10" RowDefinitions="250, *">
+        <VerticalStackLayout>
+            <Image Source="{Binding RecipeDetail.strMealThumb}" HeightRequest="180" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="{Binding RecipeDetail.strMeal}" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+        </VerticalStackLayout>
+        <ScrollView Grid.Row="1">
+            <Label Text="{Binding RecipeDetail.strInstructions}"/>
+        </ScrollView>
+
+    </Grid>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior TextOverride="Back"/>   
+    </Shell.BackButtonBehavior>
+</ContentPage>

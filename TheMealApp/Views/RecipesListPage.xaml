@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:TheMealApp.ViewModels"
+             xmlns:models="clr-namespace:TheMealApp.Models"
+             x:Class="TheMealApp.Views.RecipesListPage"
+             Title="Recipes List"
+             x:DataType="viewmodel:RecipesViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Row="0">
+            <Label Text="Category Recipes" FontSize="Header" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <Grid RowDefinitions="*" Padding="0" Grid.Row="1">
+
+            <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding GetRecipesCommand}" RefreshColor="AliceBlue">
+                <ContentView>
+                    <CollectionView ItemsSource="{Binding Recipes}" SelectionMode="Single">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Recipe">
+                                <Grid Padding="4" ColumnDefinitions="*" RowSpacing="1">
+                                    <Frame HeightRequest="75" Grid.Column="0">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RecipesViewModel}}, Path=GetRecipeDetailCommand }" 
+                                                          CommandParameter="{Binding idMeal}" />
+                                        </Frame.GestureRecognizers>
+                                        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Background="AliceBlue" Margin="2" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="70"/>
+                                        </Grid.RowDefinitions>
+
+                                        <HorizontalStackLayout Grid.Column="0" Spacing="4" VerticalOptions="FillAndExpand" HorizontalOptions="Center" >
+                                            <Image Source="{Binding strMealThumb}" WidthRequest="35" HeightRequest="35"></Image>
+                                            <Label Text="{Binding strMeal}" FontSize="Micro" VerticalTextAlignment="Center"></Label>
+                                        </HorizontalStackLayout>
+                                    </Grid>
+                                    </Frame>
+                                    
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ContentView>
+            </RefreshView>
+
+        </Grid>
+
+    </Grid>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior TextOverride="Back"/>   
+    </Shell.BackButtonBehavior>
+</ContentPage>
